@@ -12,7 +12,10 @@ import { PlusCircleIcon, XCircleIcon } from '@heroicons/vue/24/solid'
         <label for="new-task">Task:</label>
         <input v-model="newTask" name="new-task" type="text" class="border border-black" />
         <div class="task-form__action-buttons flex mx-auto">
-          <XCircleIcon class="w-8 text-gray-500 hover:text-gray-700 transition duration-200" />
+          <XCircleIcon
+            @click="clearTask"
+            class="w-8 text-gray-500 hover:text-gray-700 transition duration-200"
+          />
           <button type="submit">
             <PlusCircleIcon class="w-8 text-blue-500 hover:text-blue-600 duration-200" />
           </button>
@@ -33,7 +36,6 @@ export default {
   methods: {
     addTask() {
       if (!this.newTask) {
-        console.log('need a new task bud')
         return
       }
       const trimmedTask = this.newTask.trim()
@@ -43,8 +45,10 @@ export default {
         text: trimmedTask,
         completed: false,
       })
-      console.log('this.tasks: ', this.tasks)
-      console.log('task added!')
+      this.newTask = ''
+    },
+    clearTask() {
+      this.newTask = ''
     },
   },
 }
