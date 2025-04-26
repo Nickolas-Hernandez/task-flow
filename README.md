@@ -52,3 +52,22 @@ _(Will update as development progresses.)_
 ```bash
 npm install
 npm run dev
+```
+
+---
+
+## 🔥 Future Enhancements
+
+- [ ] Edit tasks inline (click to edit)
+- [ ] Add due dates and task priorities
+- [ ] Drag and drop task reordering
+- [ ] Basic authentication simulation (simple login screen)
+- [ ] Dark/Light mode toggle
+
+---
+
+## 🧑‍💻 Author
+
+- [Nick Hernandez](https://github.com/Nickolas-Hernandez)
+
+
