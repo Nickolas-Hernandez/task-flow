@@ -1,35 +1,54 @@
-# task-flow
+# TaskFlow
 
-This template should help get you started developing with Vue 3 in Vite.
+TaskFlow is a minimalistic task manager built with [Vue.js](https://vuejs.org/).  
+This project is designed to practice Vue fundamentals and build a polished, real-world application for portfolio use.
 
-## Recommended IDE Setup
+---
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 🚀 Project Goals
 
-## Customize configuration
+- Learn and apply core Vue.js concepts
+- Build a clean and responsive task management UI
+- Practice component-based architecture
+- Implement basic state management and local persistence (localStorage)
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+---
 
-## Project Setup
+## 🛠️ Built With
 
-```sh
-npm install
-```
+- [Vue 3](https://vuejs.org/)
+- [Vite](https://vitejs.dev/) (for fast development build)
+- [Tailwind CSS](https://tailwindcss.com/) (for modern styling)
 
-### Compile and Hot-Reload for Development
+---
 
-```sh
-npm run dev
-```
+## 📋 Features
 
-### Compile and Minify for Production
+- Add new tasks
+- Display task list dynamically
+- Mark tasks as complete/incomplete (coming soon)
+- Delete tasks (coming soon)
+- Filter tasks (All / Active / Completed) (coming soon)
+- Empty state messages
+- Mobile responsive design
+- (Planned) LocalStorage persistence
+- (Planned) Light/Dark mode toggle
 
-```sh
-npm run build
-```
+---
 
-### Lint with [ESLint](https://eslint.org/)
+## 📸 Preview
 
+_(Coming soon)_
+
+---
+
+## 🧠 Lessons Learned
+
+_(Will update as development progresses.)_
+
+---
+
+## 📦 Project Setup
 
 ```bash
 npm install
