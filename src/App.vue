@@ -23,11 +23,18 @@ import { PlusCircleIcon, XCircleIcon } from '@heroicons/vue/24/solid'
       </form>
     </div>
     <div class="tasks__container">
-      <ul class="tasks__list">
-        <li v-for="task in tasks" :key="task.id">
+      <ul v-if="tasks[0]" class="tasks__list">
+        <li
+          v-for="task in tasks"
+          :key="task.id"
+          class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition mb-4"
+        >
           {{ task.text }}
         </li>
       </ul>
+      <h2 v-else class="text-gray-500 text-center mt-8">
+        “You have no tasks yet. Let&apos;s get productive!”
+      </h2>
     </div>
   </main>
 </template>
@@ -46,7 +53,6 @@ export default {
         return
       }
       const trimmedTask = this.newTask.trim()
-      console.log('trimmedTask: ', trimmedTask)
       this.tasks.push({
         id: Date.now(),
         text: trimmedTask,
