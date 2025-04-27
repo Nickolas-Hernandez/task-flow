@@ -29,6 +29,7 @@ import { PlusCircleIcon, XCircleIcon } from '@heroicons/vue/24/solid'
           :key="task.id"
           class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition mb-4"
         >
+          <input type="checkbox" :checked="task.completed" @change="updateTaskStatus(task.id)" />
           {{ task.text }}
         </li>
       </ul>
@@ -62,6 +63,14 @@ export default {
     },
     clearTask() {
       this.newTask = ''
+    },
+    updateTaskStatus(id) {
+      console.log('task.id: ', id)
+      const selectedTask = this.tasks.find((task) => task.id === id)
+      if (selectedTask) {
+        selectedTask.completed = !selectedTask.completed
+      }
+      console.log('Tasks: ', this.tasks)
     },
   },
 }
