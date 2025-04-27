@@ -7,8 +7,8 @@ import { PlusCircleIcon, XCircleIcon } from '@heroicons/vue/24/solid'
     <h1 class="text-2xl text-center mb-4">TaskFlow</h1>
   </header>
   <main>
-    <div id="todo-board" class="text-center">
-      <form @submit.prevent="addTask" class="todo-board__task-form flex flex-col">
+    <div id="todo-board__container" class="text-center">
+      <form @submit.prevent="addTask" class="task-form flex flex-col">
         <label for="new-task">Task:</label>
         <input v-model="newTask" name="new-task" type="text" class="border border-black" />
         <div class="task-form__action-buttons flex mx-auto">
@@ -21,6 +21,13 @@ import { PlusCircleIcon, XCircleIcon } from '@heroicons/vue/24/solid'
           </button>
         </div>
       </form>
+    </div>
+    <div class="tasks__container">
+      <ul class="tasks__list">
+        <li v-for="task in tasks" :key="task.id">
+          {{ task.text }}
+        </li>
+      </ul>
     </div>
   </main>
 </template>
