@@ -86,6 +86,7 @@ export default {
         this.tasks.splice(selectedTaskIndex, 1)
       }
       console.log('this.tasks: ', this.tasks)
+
     },
   },
 }
