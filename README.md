@@ -26,11 +26,11 @@ This project is designed to practice Vue fundamentals and build a polished, real
 
 - Add new tasks
 - Display task list dynamically
-- Mark tasks as complete/incomplete (coming soon)
-- Delete tasks (coming soon)
-- Filter tasks (All / Active / Completed) (coming soon)
+- Mark tasks as complete/incomplete
+- Delete tasks
+- Filter tasks (All / Active / Completed)
 - Empty state messages
-- Mobile responsive design
+- Mobile responsive design 
 - (Planned) LocalStorage persistence
 - (Planned) Light/Dark mode toggle
 
