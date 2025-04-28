@@ -43,7 +43,10 @@ import { PlusCircleIcon, XCircleIcon, TrashIcon } from '@heroicons/vue/24/solid'
     </div>
 
     <div class="tasks-list">
-      <ul v-if="tasks[0]" class="tasks-list__list">
+      <h2 v-if="tasks.length === 0" class="text-gray-500 text-center mt-8">
+        You have no tasks yet. Let&apos;s get productive!
+      </h2>
+      <ul v-else class="tasks-list__list">
         <li
           v-for="task in filteredTasks"
           :key="task.id"
@@ -71,9 +74,6 @@ import { PlusCircleIcon, XCircleIcon, TrashIcon } from '@heroicons/vue/24/solid'
           />
         </li>
       </ul>
-      <h2 v-else class="text-gray-500 text-center mt-8">
-        “You have no tasks yet. Let&apos;s get productive!”
-      </h2>
     </div>
   </main>
 </template>
