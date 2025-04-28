@@ -1,5 +1,5 @@
 <script setup>
-import { PlusCircleIcon, XCircleIcon } from '@heroicons/vue/24/solid'
+import { PlusCircleIcon, XCircleIcon, TrashIcon } from '@heroicons/vue/24/solid'
 </script>
 
 <template>
@@ -27,9 +27,19 @@ import { PlusCircleIcon, XCircleIcon } from '@heroicons/vue/24/solid'
         <li
           v-for="task in tasks"
           :key="task.id"
-          class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition mb-4"
+          class="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition mb-4 flex justify-between items-center"
         >
-          {{ task.text }}
+          <input
+            type="checkbox"
+            :checked="task.completed"
+            @change="updateTaskStatus(task.id)"
+            class="mr-2"
+          />
+          <p class="mr-auto inline">{{ task.text }}</p>
+          <TrashIcon
+            @click="deleteTask(task.id)"
+            class="w-8 text-gray-500 hover:text-gray-700 transition duration-200"
+          />
         </li>
       </ul>
       <h2 v-else class="text-gray-500 text-center mt-8">
@@ -62,6 +72,20 @@ export default {
     },
     clearTask() {
       this.newTask = ''
+    },
+    updateTaskStatus(id) {
+      const selectedTask = this.tasks.find((task) => task.id === id)
+      if (selectedTask) {
+        selectedTask.completed = !selectedTask.completed
+      }
+    },
+    deleteTask(id) {
+      const selectedTaskIndex = this.tasks.findIndex((task) => task.id === id)
+      console.log('Selected Task Index: ', selectedTaskIndex)
+      if (selectedTaskIndex !== -1) {
+        this.tasks.splice(selectedTaskIndex, 1)
+      }
+      console.log('this.tasks: ', this.tasks)
     },
   },
 }
