@@ -31,8 +31,7 @@ This project is designed to practice Vue fundamentals and build a polished, real
 - Filter tasks (All / Active / Completed)
 - Empty state messages
 - Mobile responsive design 
-- (Planned) LocalStorage persistence
-- (Planned) Light/Dark mode toggle
+- LocalStorage persistence
 
 ---
 
