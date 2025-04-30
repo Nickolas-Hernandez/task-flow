@@ -110,6 +110,7 @@ export default {
         completed: false,
       })
       this.newTask = ''
+      this.saveTasksToStorage()
     },
     clearTask() {
       this.newTask = ''
@@ -118,12 +119,14 @@ export default {
       const selectedTask = this.tasks.find((task) => task.id === id)
       if (selectedTask) {
         selectedTask.completed = !selectedTask.completed
+        this.saveTasksToStorage()
       }
     },
     deleteTask(id) {
       const selectedTaskIndex = this.tasks.findIndex((task) => task.id === id)
       if (selectedTaskIndex !== -1) {
         this.tasks.splice(selectedTaskIndex, 1)
+        this.saveTasksToStorage()
       }
     },
     setFilter(option) {
@@ -131,6 +134,16 @@ export default {
       if (this.activeFilter === option) return
       this.activeFilter = option
     },
+    saveTasksToStorage() {
+      localStorage.setItem('tasks', JSON.stringify(this.tasks))
+    },
+  },
+  mounted() {
+    const savedTasks = localStorage.getItem('tasks')
+
+    if (savedTasks) {
+      this.tasks = JSON.parse(savedTasks)
+    }
   },
 }
 </script>
