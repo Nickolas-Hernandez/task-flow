@@ -37,7 +37,8 @@ This project is designed to practice Vue fundamentals and build a polished, real
 
 ## 📸 Preview
 
-_(Coming soon)_
+![taskflow-demo](https://github.com/user-attachments/assets/b4b597ea-b366-4f49-96ec-c82c43b2e5f7)
+
 
 ---
 
