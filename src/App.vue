@@ -3,25 +3,27 @@ import { PlusCircleIcon, XCircleIcon, TrashIcon } from '@heroicons/vue/24/solid'
 </script>
 
 <template>
-  <header>
+  <header class="max-w-2xl mx-auto">
     <h1 class="text-2xl text-center mb-4">TaskFlow</h1>
   </header>
-  <main>
-    <form @submit.prevent="addTask" class="task-form task-form flex flex-col">
-      <label for="new-task">Task:</label>
-      <input v-model="newTask" name="new-task" type="text" class="border border-black" />
+  <main class="container max-w-2xl mx-auto">
+    <form @submit.prevent="addTask" class="task-form task-form flex flex-row">
+      <!-- <label for="new-task">Task:</label> -->
+      <input
+        v-model="newTask"
+        name="new-task"
+        type="text"
+        class="border border-black rounded-lg items-center w-full pl-2"
+        placeholder="Add a new task..."
+      />
       <div class="task-form__action-buttons flex mx-auto">
-        <XCircleIcon
-          @click="clearTask"
-          class="w-8 text-gray-500 hover:text-gray-700 transition duration-200"
-        />
-        <button type="submit">
+        <button type="submit" class="my-auto">
           <PlusCircleIcon class="w-8 text-blue-500 hover:text-blue-600 duration-200" />
         </button>
       </div>
     </form>
 
-    <div class="filters flex justify-start gap-4 mt-6">
+    <div class="filters flex justify-center gap-4 mt-6">
       <button
         :class="['filters__button', activeFilter === 'all' ? 'active-filter' : '']"
         @click="setFilter('all')"
@@ -111,9 +113,6 @@ export default {
       })
       this.newTask = ''
       this.saveTasksToStorage()
-    },
-    clearTask() {
-      this.newTask = ''
     },
     updateTaskStatus(id) {
       const selectedTask = this.tasks.find((task) => task.id === id)
