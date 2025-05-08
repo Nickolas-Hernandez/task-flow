@@ -81,7 +81,15 @@ import { PlusCircleIcon, XCircleIcon, TrashIcon } from '@heroicons/vue/24/solid'
 </template>
 
 <script>
+import { PlusCircleIcon, XCircleIcon, TrashIcon } from '@heroicons/vue/24/solid'
+
 export default {
+  name: 'MyComponent',
+  components: {
+    PlusCircleIcon,
+    XCircleIcon,
+    TrashIcon,
+  },
   data() {
     return {
       newTask: '',
