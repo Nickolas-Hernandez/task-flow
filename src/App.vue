@@ -1,7 +1,3 @@
-<script setup>
-import { PlusCircleIcon, XCircleIcon, TrashIcon } from '@heroicons/vue/24/solid'
-</script>
-
 <template>
   <header class="max-w-2xl mx-auto">
     <h1 class="text-2xl text-center mb-4">TaskFlow</h1>
